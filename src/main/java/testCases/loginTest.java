@@ -1,13 +1,12 @@
 package testCases;
 import org.openqa.selenium.WebDriver;
+
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import io.qameta.allure.Description;
 import pages.loginPage;
-import pages.profileEdit;
 import utilities.BaseClass;
 import utilities.CommonUtilities;
 @Listeners({utilities.AllureListners.class})
@@ -29,15 +28,6 @@ public class loginTest extends BaseClass
 	{
 		loginPage lp =new loginPage(driver);
 		lp.loginClick(xcl.getCellData("Login","User Name"), xcl.getCellData("Login","Password"));	
-	}
-	
-	//profile-Edit
-	@Test(priority=2)
-	@Description("TestCase : Profile Edit Testcase")
-	public void editProfile()
-	{
-		profileEdit profEdit =new profileEdit(driver);
-		profEdit.profiledit(xcl.getCellData("ProfileEdit","First Name"), xcl.getCellData("ProfileEdit","Last Name"));	
 	}
 	
 	@AfterTest
